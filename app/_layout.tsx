@@ -13,15 +13,19 @@ if (!publishableKey) {
 }
 console.log("Clerk Publishable Key:", publishableKey);
 
-
 export default function RootLayout() {
   return (
     <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
-        <SafeAreaProvider>
-          <SafeAreaView className="flex-1 bg-black">
-            <Stack screenOptions={{ headerShown: false }} />
-          </SafeAreaView>
-        </SafeAreaProvider>
+      <SafeAreaProvider>
+        <SafeAreaView className="flex-1 bg-black">
+          <Stack
+            screenOptions={{
+              headerShown: false,
+              statusBarBackgroundColor: "black",
+            }}
+          />
+        </SafeAreaView>
+      </SafeAreaProvider>
     </ClerkProvider>
   );
 }
